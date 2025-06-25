@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrity Checker - Alok Kumar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="header">
+    <h1><i class="fas fa-fingerprint"></i> File Integrity Checker</h1>
+    <p class="subtitle">Verify file authenticity with cryptographic hashing</p>
+  </div>
+
+  <div class="container">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="hash-tab"><i class="fas fa-hashtag"></i> Hash Generator</button>
+      <button class="tab-btn" data-tab="compare-tab"><i class="fas fa-code-compare"></i> File Comparator</button>
+      <button class="tab-btn" data-tab="verify-tab"><i class="fas fa-check-circle"></i> Hash Verifier</button>
+    </div>
+
+    <div id="hash-tab" class="tab-content active">
+      <div class="upload-area" id="hash-dropzone">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <p>Drag & drop your file here or click to browse</p>
+        <input type="file" id="fileInput" class="file-input">
+      </div>
+      <button id="hash-btn" class="btn primary-btn"><i class="fas fa-calculator"></i> Calculate SHA-256 Hash</button>
+      <div class="result-container">
+        <h3><i class="fas fa-hashtag"></i> Generated Hash</h3>
+        <div id="hash-output" class="result">
+          <p class="placeholder">Your file hash will appear here</p>
+        </div>
+        <div class="result-actions">
+          <button id="copy-hash" class="btn secondary-btn" disabled><i class="far fa-copy"></i> Copy Hash</button>
+          <button id="clear-hash" class="btn danger-btn"><i class="fas fa-trash-alt"></i> Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="compare-tab" class="tab-content">
+      <div class="compare-files">
+        <div class="upload-area" id="compare-dropzone1">
+          <i class="fas fa-file-upload"></i>
+          <p>Drag & drop first file</p>
+          <input type="file" id="file1" class="file-input">
+        </div>
+        <div class="upload-area" id="compare-dropzone2">
+          <i class="fas fa-file-upload"></i>
+          <p>Drag & drop second file</p>
+          <input type="file" id="file2" class="file-input">
+        </div>
+      </div>
+      <button id="compare-btn" class="btn primary-btn"><i class="fas fa-exchange-alt"></i> Compare Files</button>
+      <div class="result-container">
+        <h3><i class="fas fa-clipboard-check"></i> Comparison Result</h3>
+        <div id="compare-output" class="result">
+          <p class="placeholder">Comparison results will appear here</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="verify-tab" class="tab-content">
+      <div class="upload-area" id="verify-dropzone">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <p>Drag & drop your file here</p>
+        <input type="file" id="verifyFileInput" class="file-input">
+      </div>
+      <div class="hash-input">
+        <label for="expected-hash"><i class="fas fa-hashtag"></i> Expected Hash:</label>
+        <input type="text" id="expected-hash" placeholder="Paste the expected SHA-256 hash here">
+      </div>
+      <button id="verify-btn" class="btn primary-btn"><i class="fas fa-check-double"></i> Verify Integrity</button>
+      <div class="result-container">
+        <h3><i class="fas fa-shield-alt"></i> Verification Result</h3>
+        <div id="verify-output" class="result">
+          <p class="placeholder">Verification results will appear here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="features">
+    <h2><i class="fas fa-star"></i> Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <i class="fas fa-lock"></i>
+        <h3>Secure Hashing</h3>
+        <p>Generate SHA-256 cryptographic hashes for file integrity verification</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-file-contract"></i>
+        <h3>File Comparison</h3>
+        <p>Compare two files to check if they're identical without opening them</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-check-circle"></i>
+        <h3>Hash Verification</h3>
+        <p>Verify a file against a known hash value to ensure authenticity</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-user-secret"></i>
+        <h3>Privacy Focused</h3>
+        <p>All processing happens in your browser - no files are uploaded to servers</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="creator-info">
+        <h3><i class="fas fa-user-tie"></i> Created by <strong>Alok Kumar</strong></h3>
+        <p>Cyber Security Engineer | Student at LPU</p>
+      </div>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/alokkumar48" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/alokkumaar1" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+        <a href="https://instagram.com/kumaralok487" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p><i class="far fa-copyright"></i> 2025 Alok Kumar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
